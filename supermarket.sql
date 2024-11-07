@@ -1,31 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Feb 27, 2023 at 05:59 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `supermarket`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin`
---
 
 CREATE TABLE `admin` (
   `id` int(5) NOT NULL,
@@ -33,18 +5,8 @@ CREATE TABLE `admin` (
   `adminpass` varchar(32) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `admin`
---
-
 INSERT INTO `admin` (`id`, `name`, `adminpass`) VALUES
 (1, 'mostafa essam', 'd3d9446802a44259755d38e6d163e820');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `employees`
---
 
 CREATE TABLE `employees` (
   `employee_id` int(11) NOT NULL,
@@ -53,10 +15,6 @@ CREATE TABLE `employees` (
   `employee_phone` varchar(100) DEFAULT NULL,
   `address` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `employees`
---
 
 INSERT INTO `employees` (`employee_id`, `employee_name`, `employee_password`, `employee_phone`, `address`) VALUES
 (1, 'mostafa essam', '25f9e794323b453885f5181f1b624d0b', '01118606952', 'menofia'),
@@ -71,22 +29,12 @@ INSERT INTO `employees` (`employee_id`, `employee_name`, `employee_password`, `e
 (10, 'yaser samy', 'e35cf7b66449df565f93c607d5a81d09', '01149625779', 'suiz'),
 (11, 'mostafa essam', 'd3d9446802a44259755d38e6d163e820', '011148900685', 'menodia');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `inventory`
---
-
 CREATE TABLE `inventory` (
   `id` int(11) NOT NULL,
   `item` varchar(200) DEFAULT NULL,
   `quantity` int(20) DEFAULT NULL,
   `price` int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `inventory`
---
 
 INSERT INTO `inventory` (`id`, `item`, `quantity`, `price`) VALUES
 (1, 'Bread', 100, 500),
@@ -119,29 +67,7 @@ INSERT INTO `inventory` (`id`, `item`, `quantity`, `price`) VALUES
 (30, 'olive', 450, 200),
 (31, 'mostarda', 40, 100);
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `employees`
---
-ALTER TABLE `employees`
-  ADD PRIMARY KEY (`employee_id`);
-
---
--- Indexes for table `inventory`
---
-ALTER TABLE `inventory`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `admin` ADD PRIMARY KEY (`id`);
+ALTER TABLE `employees`  ADD PRIMARY KEY (`employee_id`);
+ALTER TABLE `inventory`  ADD PRIMARY KEY (`id`);
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
